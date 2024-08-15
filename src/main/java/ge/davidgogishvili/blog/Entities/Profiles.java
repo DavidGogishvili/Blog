@@ -1,18 +1,20 @@
 package ge.davidgogishvili.blog.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(schema = "public", name = "profiles")
+@Data
+@Table(schema = "public", name = "profiles" )
 public class Profiles extends BaseEntity {
+
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="profiles_seq-generator")
-    @SequenceGenerator(name="profiles_seq-generator", sequenceName="profiles_id_seq", allocationSize = 1)
+    @SequenceGenerator(name="profiles_id_seq-generator", sequenceName="profiles_id_seq", allocationSize = 1)
     @Id
     private Integer id;
 
@@ -28,28 +30,17 @@ public class Profiles extends BaseEntity {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    @Column(name = "gender")
-    private String gender;
-
     @Column(name = "age")
     private Integer age;
+
+    @Column(name = "gender")
+    private String gender;
 
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "is_phone_number_confirmed")
-    private Boolean isPhoneNumberConfirmed;
-
     @Column(name = "user_id")
     private Integer userId;
-
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private UserDomain users;
-
-
 
 
 }

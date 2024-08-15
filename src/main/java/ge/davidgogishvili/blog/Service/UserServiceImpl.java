@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService {
         var user = new UserDomain();
         user.setEmail(userCreateModel.email());
         user.setPassword(userCreateModel.password());
-        user.setActive(true);
         userRepo.save(user);
 
         return user;

@@ -1,9 +1,8 @@
 package ge.davidgogishvili.blog.Security;
 
-import ge.davidgogishvili.blog.Entities.Profiles;
 import ge.davidgogishvili.blog.Entities.Roles;
-import ge.davidgogishvili.blog.Entities.UserRoles;
 import ge.davidgogishvili.blog.Entities.UserDomain;
+import ge.davidgogishvili.blog.Entities.UserRoles;
 import ge.davidgogishvili.blog.Repositories.UserRepo;
 import ge.davidgogishvili.blog.Repositories.UserRolesRepo;
 import lombok.RequiredArgsConstructor;
@@ -36,12 +35,13 @@ public class UserManager implements UserDetailsService {
         for (UserRoles userRole : userRoles) {
             roles.add(userRole.getRole());
         }
-        userDetails.setRoleList(roles);
+        userDetails.setRolesList(roles);
 
         System.out.println("User " + username + " has logged in");
 
-        return (UserDetails) userDetails;
+        return userDetails;
     }
+
 
     public static UserDomain getCurrentUser() {
         var auth = SecurityContextHolder.getContext().getAuthentication();
@@ -54,10 +54,10 @@ public class UserManager implements UserDetailsService {
         throw new RuntimeException("Anonymous user");
     }
 
-    public static List<Profiles> getCurrentUserProfileId() {
-        UserDomain currentUser = getCurrentUser();
-        return currentUser.getProfiles();
-    }
+//    public static Integer getCurrentUserProfileId() {
+//        UserDomain currentUser = getCurrentUser();
+//        return currentUser.getProfileId();
+//    }
 
     public static Integer getCurrentUserId() {
         UserDomain currentUser = getCurrentUser();

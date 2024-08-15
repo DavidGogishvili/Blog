@@ -37,7 +37,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(
                         (authorize) -> authorize
-                                .requestMatchers( "/users/**", "profile/**").permitAll()
+                                .requestMatchers( "/users/**", "profiles/**", "posts/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults())

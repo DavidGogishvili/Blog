@@ -1,17 +1,38 @@
 package ge.davidgogishvili.blog.Controllers;
 
 
+import ge.davidgogishvili.blog.Entities.Posts;
+import ge.davidgogishvili.blog.Models.PostCreateModel;
+import ge.davidgogishvili.blog.Repositories.PostsRepo;
+import ge.davidgogishvili.blog.Service.PostService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+import java.util.List;
+
 @RestController
-@RequestMapping("post")
+@RequiredArgsConstructor
+@RequestMapping("/posts")
 public class PostController {
 
 
+    private final PostService postService;
+    private final PostsRepo postsRepo;
 
+    @PostMapping("/new")
+    public Posts createPost(@RequestBody PostCreateModel postCreateModel) {
+        return postService.createPost(postCreateModel);
+    }
 
+    @GetMapping("/find")
+    public List<Posts> findAllPosts() {
+        return postsRepo.findAll();
+    }
+
+    @GetMapping("/getCurrentUsersPosts")
+    public ResponseEntity<List<Posts>> getCurrentUsersPosts() {
+        List <Posts> posts = postService.getPostsByCurrentUser();
+        return ResponseEntity.ok(posts);
+    }
 }
