@@ -6,6 +6,6 @@ import ge.davidgogishvili.blog.Models.CommentCreateModel;
 
 public interface CommentService {
 
-    Comments createComment(CommentCreateModel createModel, Integer postId);
+    Comments createComment(CommentCreateModel createModel, Integer postId, Integer recipeId);
 
 }

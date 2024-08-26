@@ -29,4 +29,8 @@ public class Comments extends BaseEntity {
     @JoinColumn(name = "post_id")
     private Posts post;
 
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
+    private Recipes recipe;
+
 }
