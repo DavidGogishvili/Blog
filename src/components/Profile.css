@@ -1,0 +1,187 @@
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.profile-dialog {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.email {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.profile-picture-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 10px;
+}
+
+.edit-div {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    border: 1px solid;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-dialog {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80%;
+    max-width: 250px;
+    margin: 20px auto;
+}
+
+.plus-div {
+    height: 1px;
+    margin-bottom: 45px;
+}
+
+.plus {
+    width: 30px;
+}
+
+.divider {
+    border: 1px solid black;
+}
+
+.plus-frame {
+    border: solid 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(50% - 15px);
+    top: calc(100% - 50px);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(119, 119, 119, 0.09);
+    outline: none;
+}
+
+.save-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.sign-out {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(28, 27, 26, 0.18);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.actions {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-dialog {
+        width: 95%;
+    }
+
+    .profile-picture {
+        width: 70px;
+        height: 70px;
+    }
+
+    .edit-div {
+        top: 40px;
+        right: 5px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .plus-frame {
+        width: 30px;
+        height: 30px;
+        left: calc(50% - 15px);
+        top: calc(100% - 45px);
+    }
+
+    .edit-dialog {
+        width: 90%;
+    }
+
+    .save-button, .sign-out {
+        margin-top: 20px;
+    }
+}

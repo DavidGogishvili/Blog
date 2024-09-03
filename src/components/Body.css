@@ -1,0 +1,156 @@
+body {
+    background-image: url('../assets/background.png');
+    background-attachment: fixed;
+    height: 100%;
+    padding: calc(8rem + 60px) 20px 50px;
+    margin: 0;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+    background-color: rgba(255, 255, 255, 0.93);
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.post-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #777;
+}
+
+.post-type, .post-author, .post-categories {
+    flex: 1;
+    margin: 5px;
+}
+
+.post-type {
+    text-align: left;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+.post-author {
+    text-align: center;
+    font-size: large;
+    color: #000;
+}
+
+.post-categories {
+    text-align: right;
+    white-space: nowrap;
+    color: darkorange;
+}
+
+.post-categories span::after {
+    content: ' / ';
+}
+
+.post-categories span:last-child::after {
+    content: '';
+}
+
+.post-content {
+    text-align: justify;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.published {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: rgba(3, 7, 26, 0.29);
+    width: 100%;
+    font-size: small;
+    text-align: right;
+}
+
+.read-more {
+    color: #ff6347;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.comments-link {
+    font-size: 14px;
+    color: #ff6347;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.comments-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .post {
+        flex-direction: column;
+    }
+
+    .post-image {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .post-info {
+        width: 100%;
+    }
+
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-type, .post-author, .post-categories {
+        text-align: left;
+    }
+
+    .published {
+        bottom: 20px;
+    }
+
+    .read-more {
+        text-align: center;
+    }
+}
