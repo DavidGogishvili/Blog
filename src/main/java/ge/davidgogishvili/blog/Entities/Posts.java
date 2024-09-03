@@ -27,6 +27,12 @@ public class Posts extends BaseEntity {
     @Column(name = "title")
     private String title;
 
+    @Column (name = "category")
+    private String category;
+
+    @Column (name = "sub_category")
+    private String subCategory;
+
     @Column(name = "profile_id")
     private Integer profileId;
 

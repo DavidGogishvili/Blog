@@ -27,6 +27,8 @@ public class PostServiceImpl implements PostService {
         Posts post = new Posts();
         post.setTitle(postCreateModel.title());
         post.setContent(postCreateModel.content());
+        post.setCategory(postCreateModel.category());
+        post.setSubCategory(postCreateModel.subCategory());
 
         if (profile != null && profile.getName() != null) {
             post.setCreatorName(profile.getName());

@@ -27,7 +27,7 @@ public class PostController {
 
     @GetMapping("/find")
     public List<Posts> findAllPosts() {
-        return postsRepo.findAll();
+        return  postsRepo.findAll();
     }
 
     @GetMapping("/getCurrentUsersPosts")

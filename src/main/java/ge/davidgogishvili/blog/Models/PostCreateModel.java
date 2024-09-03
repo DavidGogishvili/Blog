@@ -5,6 +5,10 @@ public record PostCreateModel(
 
         String title,
 
-        String content
+        String content,
+
+        String category,
+
+        String subCategory
 ) {
 }
